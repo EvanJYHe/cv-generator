@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import "./styles/App.css"
 import PersonalInfoForm from './components/InfoEditor/PersonalInfoForm'
 import exampleData from './ExampleData'
 
@@ -10,16 +10,22 @@ function App() {
   const [educationInfo, setEducationInfo] = useState(exampleData.educationInfo)
   const [experienceInfo, setExperienceInfo] = useState(exampleData.experienceInfo)
 
-  function handlePersonalInfoChange() {
-
+  function handlePersonalInfoChange(event) {
+    const key = event.target.dataset.key;
+    const newInputValue = event.target.value;
+    console.log(newInputValue);
+    setPersonalInfo({...personalInfo, [key]: newInputValue})
   }
 
   return (
-    <>
-      <div>
-        <PersonalInfoForm />
+    <div className = "app">
+      <div className = "editor-container">
+        <PersonalInfoForm updatePersonalInfo={handlePersonalInfoChange}/>
       </div>
-    </>
+      <div className = "resume-container">
+
+      </div>
+    </div>
   )
 }
 
