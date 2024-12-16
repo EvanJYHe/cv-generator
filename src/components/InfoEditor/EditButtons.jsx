@@ -1,8 +1,8 @@
-function EditButtons({addEducationForm, removeEducationForm}) {
+function EditButtons({addForm, removeForm}) {
     return(
         <div>
-            <button type="button" onClick={addEducationForm}>New</button>
-            <button type="button" onClick={removeEducationForm}>Remove</button>
+            <button type="button" onClick={addForm}>New</button>
+            <button type="button" onClick={removeForm}>Remove</button>
         </div>
     )
 }

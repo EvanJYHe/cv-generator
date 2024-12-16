@@ -22,13 +22,10 @@ const exampleData = {
         {
             company: "Krusty Krabs",
             job: "fry cook",
-            city: "Bikini Bottom",
-            country: "SEA",
             start: "1986-07-14",
             end: "2024-10-01",
             description: "Prepared the world-famous Krabby Patties and ensured high-quality customer service",
-            displayName: "Krusty Krabs",
-            key: uniqid(),
+            id: uniqid(),
         },
     ],
 
