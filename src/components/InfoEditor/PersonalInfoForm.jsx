@@ -1,8 +1,10 @@
+
+
 function PersonalInfoForm({updatePersonalInfo}) {
     return (
-        <div className = "">
+        <div className = "personal-info-form">
             <h1>
-                Personal:
+                <i className = "fa fa-user"></i> Personal
             </h1>
             <form>
                 <div>
@@ -10,7 +12,7 @@ function PersonalInfoForm({updatePersonalInfo}) {
                     <input
                         type = "text"
                         data-key = "fullName"
-                        placeholder = "John Doe"
+                        placeholder = "Enter Name"
                         onChange = {(event)=> updatePersonalInfo(event)}
                     />
                 </div>
@@ -19,7 +21,7 @@ function PersonalInfoForm({updatePersonalInfo}) {
                     <input
                         type = "text"
                         data-key = "email"
-                        placeholder = "John.Doe@gmail.com"
+                        placeholder = "Enter Email"
                         onChange = {(event)=> updatePersonalInfo(event)}
                     />
                 </div>
@@ -28,7 +30,7 @@ function PersonalInfoForm({updatePersonalInfo}) {
                     <input
                         type = "text"
                         data-key = "phoneNumber"
-                        placeholder = "678-234-3302"
+                        placeholder = "Enter Phone Number"
                         onChange = {(event)=> updatePersonalInfo(event)}
                     />
                 </div>
