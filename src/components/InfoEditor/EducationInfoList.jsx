@@ -3,8 +3,8 @@ import uniqid from "uniqid";
 import EditButtons from "./EditButtons";
 
 
-function EducationInfoForm({updateEducationInfo, newForm, removeForm}) {
-
+function EducationInfoForm({id, updateEducationInfo, addEducationForm, removeEducationForm}) {
+    console.log("this is the forms id: " + id)
     return(
             <form>
                 <div>
@@ -13,7 +13,7 @@ function EducationInfoForm({updateEducationInfo, newForm, removeForm}) {
                         type = "text"
                         data-key = "schoolName"
                         placeholder = "Enter University Name"
-                        onChange = {(event)=> updateEducationInfo(event)}
+                        onChange = {(event)=> updateEducationInfo(event, id)}
                     />
                 </div>
                 <div>
@@ -22,7 +22,7 @@ function EducationInfoForm({updateEducationInfo, newForm, removeForm}) {
                         type = "text"
                         data-key = "degree"
                         placeholder = "Enter Degree Name/Field Of Study"
-                        onChange = {(event)=> updateEducationInfo(event)}
+                        onChange = {(event)=> updateEducationInfo(event, id)}
                     />
                 </div>
                 <div>
@@ -31,7 +31,7 @@ function EducationInfoForm({updateEducationInfo, newForm, removeForm}) {
                         type = "text"
                         data-key = "startDate"
                         placeholder = "yyyy-mm-dd"
-                        onChange = {(event)=> updateEducationInfo(event)}
+                        onChange = {(event)=> updateEducationInfo(event, id)}
                     />
                 </div>
                 <div>
@@ -40,41 +40,31 @@ function EducationInfoForm({updateEducationInfo, newForm, removeForm}) {
                         type = "text"
                         data-key = "end Date"
                         placeholder = "yyyy-mm-dd"
-                        onChange = {(event)=> updateEducationInfo(event)}
+                        onChange = {(event)=> updateEducationInfo(event, id)}
                     />
                 </div>
-                <EditButtons newForm={newForm} removeForm={removeForm}/>
+                <EditButtons addEducationForm={addEducationForm} removeEducationForm={removeEducationForm}/>
             </form>
             
     )
 }
 
-function EducationInfoList({educationInfo, updateEducationInfo}) {
-
-    const [educationForms, setEducationForms] = useState([{ id: uniqid() }]); //state to store all the education forms by id
-
-    const addNewForm = () => {
-        console.log("addNewForm")
-        setEducationForms([...educationForms, { id: uniqid() }]);  //create new form and add it to the state
-    };
-
-    const removeForm = (id) => {
-        if (educationForms.length === 1) return; //no need to remove the last form
-        setEducationForms(educationForms.filter((form) => form.id !== id)); //remove form from state
-    };
-
+function EducationInfoList({educationInfo, updateEducationInfo, addEducationForm, removeEducationForm}) {
+    console.log("educationInfo:", educationInfo);
     return(
         <div>
             <h1>
                 <i className = "fa fa-graduation-cap"></i> Education
             </h1>
             <div>
-                {educationForms.map((form) => (
+                
+                {educationInfo.map((form) => (
                     <EducationInfoForm 
-                    key={form.id}
+                    key={form.id} //used by react to identify elements in list
+                    id={form.id} //id to identify specific
                     updateEducationInfo={updateEducationInfo} 
-                    newForm={addNewForm} 
-                    removeForm={() => removeForm(form.id)} 
+                    addEducationForm={addEducationForm} 
+                    removeEducationForm={() => removeEducationForm(form.id)} 
                     />
                 ))}
             </div>

@@ -15,7 +15,7 @@ const exampleData = {
             startDate: "07/1986",
             endDate: "present",
             id: uniqid(),
-          }
+        }
     ],    
     
     experienceInfo: [
