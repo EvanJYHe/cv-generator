@@ -1,4 +1,7 @@
+import EditButtons from "./EditButtons";
+
 function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
+
     return (
         <form>
             <div>
@@ -48,7 +51,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                     Description
                 </label>
                 <textarea
-                    data-key="job"
+                    data-key="description"
                     placeholder="Enter Job Description"
                     onChange={(event) => updateExperienceInfo(event, id)}
                 />
@@ -66,7 +69,8 @@ function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienc
                 <i className="fa fa-suitcase"></i> Experience
             </h1>
             <div>
-                {experienceInfo.map((form) => {
+
+                {experienceInfo.map((form) => (
                     <ExperienceInfoForm
                         key={form.id} //used by react to identify elements in list
                         id={form.id} //id to identify specific
@@ -74,9 +78,8 @@ function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienc
                         addExperienceForm={addExperienceForm}
                         removeExperienceForm={() => removeExperienceForm(form.id)}
                     />
-                })}
+                ))}
             </div>
-
         </div>
     )
 }

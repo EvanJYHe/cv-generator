@@ -50,7 +50,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
 }
 
 function EducationInfoList({ educationInfo, updateEducationInfo, addEducationForm, removeEducationForm }) {
-
+    
     return (
         <div>
             <h1>

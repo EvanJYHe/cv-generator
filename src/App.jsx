@@ -58,7 +58,7 @@ function App() {
   function handleExperienceInfoChange(event, id) {
     const key = event.target.dataset.key;
     const newInputValue = event.target.value;
-
+  
     const newObject = experienceInfo.map((form) => {
       if (form.id === id) {
         return { ...form, [key]: newInputValue }; //return changed form object
@@ -66,7 +66,7 @@ function App() {
       return form; //don't change anything if it doesnt match
     });
 
-    setEducationInfo(newObject)
+    setExperienceInfo(newObject)
   }
 
   const addExperienceForm = () => {
@@ -85,7 +85,7 @@ function App() {
   const removeExperienceForm = (id) => {
     if (experienceInfo.length === 1) return; //no need to remove the last form
 
-    setExperienceInfo(educaexperienceInfotionInfo.filter((form) => form.id !== id)); //return all forms except the one with the id
+    setExperienceInfo(experienceInfo.filter((form) => form.id !== id)); //return all forms except the one with the id
   };
 
   return (
