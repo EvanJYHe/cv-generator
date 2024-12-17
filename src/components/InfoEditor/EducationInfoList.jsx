@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import uniqid from "uniqid";
 import EditButtons from "./EditButtons";
 
@@ -38,7 +38,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
                 <label>End Date</label>
                 <input
                     type="text"
-                    data-key="end Date"
+                    data-key="endDate"
                     placeholder="yyyy-mm-dd"
                     onChange={(event) => updateEducationInfo(event, id)}
                 />
@@ -72,4 +72,4 @@ function EducationInfoList({ educationInfo, updateEducationInfo, addEducationFor
     )
 }
 
-export default EducationInfoList;
+export default memo(EducationInfoList);

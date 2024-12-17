@@ -12,7 +12,7 @@ const exampleData = {
             degree: "Fry Cook Certification",
             schoolName: "Krusty Krabs Culinary Institute",
             location: "Bikini Bottom, SEA",
-            startDate: "07/1986",
+            startDate: "1986/10/03",
             endDate: "present",
             id: uniqid(),
         }

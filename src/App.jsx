@@ -6,13 +6,16 @@ import PersonalInfoForm from './components/InfoEditor/PersonalInfoForm'
 import exampleData from './ExampleData'
 import EducationInfoList from './components/InfoEditor/EducationInfoList'
 import uniqid from "uniqid";
-import ExperienceInfoList from './components/InfoEditor/ExperienceInfoForm'
+import ExperienceInfoList from './components/InfoEditor/ExperienceInfoList'
+import PersonalSection from './components/ResumeCanvas/PersonalSection'
+import EducationSection from './components/ResumeCanvas/EducationSection'
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo)
   const [educationInfo, setEducationInfo] = useState(exampleData.educationInfo)
   const [experienceInfo, setExperienceInfo] = useState(exampleData.experienceInfo)
 
+  //---------------------PERSONAL------------------
   function handlePersonalInfoChange(event) {
     const key = event.target.dataset.key;
     const newInputValue = event.target.value;
@@ -58,7 +61,7 @@ function App() {
   function handleExperienceInfoChange(event, id) {
     const key = event.target.dataset.key;
     const newInputValue = event.target.value;
-  
+
     const newObject = experienceInfo.map((form) => {
       if (form.id === id) {
         return { ...form, [key]: newInputValue }; //return changed form object
@@ -106,6 +109,12 @@ function App() {
         />
       </div>
       <div className="resume-container">
+        <PersonalSection
+          personalInfo={personalInfo}
+        />
+        <EducationSection
+          educationInfo={educationInfo}
+        />
 
       </div>
     </div>
