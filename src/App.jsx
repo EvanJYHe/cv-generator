@@ -93,8 +93,8 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div className="editor-container">
+    <div className="flex flex-row bg-gray-100 w-full ">
+      <div className="flex-shrink-0 m-6 flex flex-col gap-6">
         <PersonalInfoForm updatePersonalInfo={handlePersonalInfoChange} />
         <EducationInfoList
           educationInfo={educationInfo}
@@ -109,7 +109,7 @@ function App() {
           removeExperienceForm={removeExperienceForm}
         />
       </div>
-      <div className="resume-container">
+      <div className="flex-1 my-6 mr-6 bg-white">
         <PersonalSection
           personalInfo={personalInfo}
         />

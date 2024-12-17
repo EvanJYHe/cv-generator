@@ -1,10 +1,9 @@
-import { useState, memo } from 'react';
 import uniqid from "uniqid";
 import EditButtons from "./EditButtons";
 import TextInput from "./TextInput";
+import { useEffect } from "react";
 
 function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEducationForm }) {
-
     return (
         <form>
             <TextInput
@@ -25,7 +24,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
             />
             <TextInput
                 labelText={"Start Date"}
-                type={"text"}
+                type={"date"}
                 stateKey={"startDate"}
                 placeholder={"yyyy-mm-dd"}
                 updateFunction={updateEducationInfo}
@@ -33,7 +32,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
             />
             <TextInput
                 labelText={"End Date"}
-                type={"text"}
+                type={"date"}
                 stateKey={"endDate"}
                 placeholder={"yyyy-mm-dd"}
                 updateFunction={updateEducationInfo}
@@ -48,7 +47,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
 function EducationInfoList({ educationInfo, updateEducationInfo, addEducationForm, removeEducationForm }) {
 
     return (
-        <div>
+        <div className="p-6 bg-white rounded-lg">
             <h1>
                 <i className="fa fa-graduation-cap"></i> Education
             </h1>
@@ -68,4 +67,4 @@ function EducationInfoList({ educationInfo, updateEducationInfo, addEducationFor
     )
 }
 
-export default memo(EducationInfoList);
+export default (EducationInfoList);

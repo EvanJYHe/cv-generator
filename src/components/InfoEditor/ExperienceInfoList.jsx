@@ -1,11 +1,11 @@
 import EditButtons from "./EditButtons";
 import TextInput from "./TextInput";
-import { memo } from 'react';
+
 
 function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
 
     return (
-        <form>
+        <form >
             <TextInput
                 labelText={"Job"}
                 type={"text"}
@@ -66,7 +66,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
 function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
 
     return (
-        <div>
+        <div className="p-6 bg-white rounded-lg">
             <h1>
                 <i className="fa fa-suitcase"></i> Experience
             </h1>
@@ -86,4 +86,4 @@ function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienc
     )
 }
 
-export default memo(ExperienceInfoList);
+export default (ExperienceInfoList);
