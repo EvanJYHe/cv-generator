@@ -6,36 +6,30 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
 
     return (
         <form>
-            <div>
-                <TextInput
-                    labelText={"Company"}
-                    type={"text"}
-                    stateKey={"company"}
-                    placeholder={"Enter Company Name"}
+            <TextInput
+                labelText={"Job"}
+                type={"text"}
+                stateKey={"job"}
+                placeholder={"Enter Job Name"}
                     updateFunction={updateExperienceInfo}
-                    id={id}
-                />
-            </div>
-            <div>
-                <TextInput
-                    labelText={"Job"}
-                    type={"text"}
-                    stateKey={"job"}
-                    placeholder={"Enter Job Name"}
-                    updateFunction={updateExperienceInfo}
-                    id={id}
-                />
-            </div>
-            <div>
-                <TextInput
-                    labelText={"Location"}
-                    type={"text"}
-                    stateKey={"location"}
-                    placeholder={"Enter Location"}
-                    updateFunction={updateExperienceInfo}
-                    id={id}
-                />
-            </div>
+                id={id}
+            />
+            <TextInput
+                labelText={"Company"}
+                type={"text"}
+                stateKey={"company"}
+                placeholder={"Enter Company Name"}
+                updateFunction={updateExperienceInfo}
+                id={id}
+            />
+            <TextInput
+                labelText={"Location"}
+                type={"text"}
+                stateKey={"location"}
+                placeholder={"Enter Location"}
+                updateFunction={updateExperienceInfo}
+                id={id}
+            />
             <div className="date-forms">
                 <TextInput
                     labelText={"Start Date"}

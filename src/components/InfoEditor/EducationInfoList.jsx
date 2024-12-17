@@ -1,48 +1,44 @@
 import { useState, memo } from 'react';
 import uniqid from "uniqid";
 import EditButtons from "./EditButtons";
-
+import TextInput from "./TextInput";
 
 function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEducationForm }) {
 
     return (
         <form>
-            <div>
-                <label>School Name</label>
-                <input
-                    type="text"
-                    data-key="schoolName"
-                    placeholder="Enter University Name"
-                    onChange={(event) => updateEducationInfo(event, id)}
-                />
-            </div>
-            <div>
-                <label>Degree</label>
-                <input
-                    type="text"
-                    data-key="degree"
-                    placeholder="Enter Degree Name/Field Of Study"
-                    onChange={(event) => updateEducationInfo(event, id)}
-                />
-            </div>
-            <div>
-                <label>Start Date</label>
-                <input
-                    type="text"
-                    data-key="startDate"
-                    placeholder="yyyy-mm-dd"
-                    onChange={(event) => updateEducationInfo(event, id)}
-                />
-            </div>
-            <div>
-                <label>End Date</label>
-                <input
-                    type="text"
-                    data-key="endDate"
-                    placeholder="yyyy-mm-dd"
-                    onChange={(event) => updateEducationInfo(event, id)}
-                />
-            </div>
+            <TextInput
+                labelText={"School Name"}
+                type={"text"}
+                stateKey={"schoolName"}
+                placeholder={"Enter University Name"}
+                updateFunction={updateEducationInfo}
+                id={id}
+            />
+            <TextInput
+                labelText={"Degree"}
+                type={"text"}
+                stateKey={"degree"}
+                placeholder={"Enter Degree Name/Field Of Study"}
+                updateFunction={updateEducationInfo}
+                id={id}
+            />
+            <TextInput
+                labelText={"Start Date"}
+                type={"text"}
+                stateKey={"startDate"}
+                placeholder={"yyyy-mm-dd"}
+                updateFunction={updateEducationInfo}
+                id={id}
+            />
+            <TextInput
+                labelText={"End Date"}
+                type={"text"}
+                stateKey={"endDate"}
+                placeholder={"yyyy-mm-dd"}
+                updateFunction={updateEducationInfo}
+                id={id}
+            />
             <EditButtons addForm={addEducationForm} removeForm={removeEducationForm} />
         </form>
 
@@ -50,7 +46,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
 }
 
 function EducationInfoList({ educationInfo, updateEducationInfo, addEducationForm, removeEducationForm }) {
-    
+
     return (
         <div>
             <h1>
