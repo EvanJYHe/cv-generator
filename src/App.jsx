@@ -9,6 +9,7 @@ import uniqid from "uniqid";
 import ExperienceInfoList from './components/InfoEditor/ExperienceInfoList'
 import PersonalSection from './components/ResumeCanvas/PersonalSection'
 import EducationSection from './components/ResumeCanvas/EducationSection'
+import ExperienceSection from './components/ResumeCanvas/ExperienceSection'
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo)
@@ -76,8 +77,8 @@ function App() {
     const temp = {
       company: "",
       job: "",
-      start: "",
-      end: "",
+      startDate: "",
+      endDate: "",
       description: "",
       id: uniqid(),
     }
@@ -114,6 +115,9 @@ function App() {
         />
         <EducationSection
           educationInfo={educationInfo}
+        />
+        <ExperienceSection
+          experienceInfo={experienceInfo}
         />
 
       </div>

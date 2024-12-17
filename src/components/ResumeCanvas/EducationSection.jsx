@@ -28,6 +28,7 @@ function EducationSection({educationInfo}) {
             <h1>
                 Education
             </h1>
+            <hr/>
             {educationInfo.map((form) => (
             <EducationDetails
                 key={form.id}

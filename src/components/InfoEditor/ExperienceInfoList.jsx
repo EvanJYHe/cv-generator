@@ -1,4 +1,5 @@
 import EditButtons from "./EditButtons";
+import { memo } from 'react';
 
 function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
 
@@ -23,6 +24,17 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                     type="text"
                     data-key="job"
                     placeholder="Enter Job Name"
+                    onChange={(event) => updateExperienceInfo(event, id)}
+                />
+            </div>
+            <div>
+                <label>
+                    Location
+                </label>
+                <input
+                    type="text"
+                    data-key="location"
+                    placeholder="Enter Location"
                     onChange={(event) => updateExperienceInfo(event, id)}
                 />
             </div>
@@ -84,4 +96,4 @@ function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienc
     )
 }
 
-export default ExperienceInfoList
+export default memo(ExperienceInfoList);

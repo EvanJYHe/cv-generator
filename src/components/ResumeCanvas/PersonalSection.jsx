@@ -9,6 +9,7 @@ function PersonalSection({ personalInfo }) {
                     <a href={"mailto:" + personalInfo.email}>{personalInfo.email}</a> | {personalInfo.phoneNumber}
                 </p>
             </div>
+            <hr/>
         </div>
     )
 }
