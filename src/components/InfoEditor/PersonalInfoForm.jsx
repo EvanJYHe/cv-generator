@@ -1,3 +1,4 @@
+import TextInput from "./TextInput";
 
 
 function PersonalInfoForm({updatePersonalInfo}) {
@@ -8,30 +9,30 @@ function PersonalInfoForm({updatePersonalInfo}) {
             </h1>
             <form>
                 <div>
-                    <label>Full Name</label>
-                    <input
-                        type = "text"
-                        data-key = "fullName"
-                        placeholder = "Enter Name"
-                        onChange = {(event)=> updatePersonalInfo(event)}
+                    <TextInput
+                        labelText={"Full Name"}
+                        type={"text"}
+                        stateKey={"fullName"}
+                        placeholder={"Enter Name"}
+                        updateFunction={updatePersonalInfo}
                     />
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input
-                        type = "text"
-                        data-key = "email"
-                        placeholder = "Enter Email"
-                        onChange = {(event)=> updatePersonalInfo(event)}
+                    <TextInput
+                        labelText={"Email"}
+                        type={"text"}
+                        stateKey={"email"}
+                        placeholder={"Enter Email"}
+                        updateFunction={updatePersonalInfo}
                     />
                 </div>
                 <div>
-                    <label>Phone Number</label>
-                    <input
-                        type = "text"
-                        data-key = "phoneNumber"
-                        placeholder = "Enter Phone Number"
-                        onChange = {(event)=> updatePersonalInfo(event)}
+                    <TextInput
+                        labelText={"Phone Number"}
+                        type={"text"}
+                        stateKey={"phoneNumber"}
+                        placeholder={"Enter Phone Number"}
+                        updateFunction={updatePersonalInfo}
                     />
                 </div>
             </form>

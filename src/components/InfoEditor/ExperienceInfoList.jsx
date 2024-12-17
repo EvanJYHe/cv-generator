@@ -1,4 +1,5 @@
 import EditButtons from "./EditButtons";
+import TextInput from "./TextInput";
 import { memo } from 'react';
 
 function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
@@ -6,56 +7,51 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
     return (
         <form>
             <div>
-                <label>
-                    Company
-                </label>
-                <input
-                    type="text"
-                    data-key="company"
-                    placeholder="Enter Company Name"
-                    onChange={(event) => updateExperienceInfo(event, id)}
+                <TextInput
+                    labelText={"Company"}
+                    type={"text"}
+                    stateKey={"company"}
+                    placeholder={"Enter Company Name"}
+                    updateFunction={updateExperienceInfo}
+                    id={id}
                 />
             </div>
             <div>
-                <label>
-                    Job
-                </label>
-                <input
-                    type="text"
-                    data-key="job"
-                    placeholder="Enter Job Name"
-                    onChange={(event) => updateExperienceInfo(event, id)}
+                <TextInput
+                    labelText={"Job"}
+                    type={"text"}
+                    stateKey={"job"}
+                    placeholder={"Enter Job Name"}
+                    updateFunction={updateExperienceInfo}
+                    id={id}
                 />
             </div>
             <div>
-                <label>
-                    Location
-                </label>
-                <input
-                    type="text"
-                    data-key="location"
-                    placeholder="Enter Location"
-                    onChange={(event) => updateExperienceInfo(event, id)}
+                <TextInput
+                    labelText={"Location"}
+                    type={"text"}
+                    stateKey={"location"}
+                    placeholder={"Enter Location"}
+                    updateFunction={updateExperienceInfo}
+                    id={id}
                 />
             </div>
             <div className="date-forms">
-                <label>
-                    Start Date
-                </label>
-                <input
-                    type="date"
-                    data-key="startDate"
-                    placeholder="Enter Start Date"
-                    onChange={(event) => updateExperienceInfo(event, id)}
+                <TextInput
+                    labelText={"Start Date"}
+                    type={"date"}
+                    stateKey={"startDate"}
+                    placeholder={"Enter Start Date"}
+                    updateFunction={updateExperienceInfo}
+                    id={id}
                 />
-                <label>
-                    End Date
-                </label>
-                <input
-                    type="date"
-                    data-key="endDate"
-                    placeholder="Enter End Date"
-                    onChange={(event) => updateExperienceInfo(event, id)}
+                <TextInput
+                    labelText={"End Date"}
+                    type={"date"}
+                    stateKey={"endDate"}
+                    placeholder={"Enter End Date"}
+                    updateFunction={updateExperienceInfo}
+                    id={id}
                 />
             </div>
             <div>
