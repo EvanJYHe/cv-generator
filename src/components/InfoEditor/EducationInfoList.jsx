@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEducationForm }) {
     return (
-        <form>
+        <form className="mt-4">
             <TextInput
                 labelText={"School Name"}
                 type={"text"}
