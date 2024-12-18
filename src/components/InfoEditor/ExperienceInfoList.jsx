@@ -30,7 +30,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                 updateFunction={updateExperienceInfo}
                 id={id}
             />
-            <div className="date-forms">
+            <div className="flex flex-row gap-4">
                 <TextInput
                     labelText={"Start Date"}
                     type={"date"}
@@ -48,14 +48,15 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                     id={id}
                 />
             </div>
-            <div>
-                <label>
+            <div className="flex flex-col mb-4"> 
+                <label className="mb-2 font-medium">
                     Description
                 </label>
                 <textarea
                     data-key="description"
                     placeholder="Enter Job Description"
                     onChange={(event) => updateExperienceInfo(event, id)}
+                    className="p-2 border border-gray-300 rounded"
                 />
             </div>
             <EditButtons addForm={addExperienceForm} removeForm={removeExperienceForm} />

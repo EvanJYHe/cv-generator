@@ -22,22 +22,24 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
                 updateFunction={updateEducationInfo}
                 id={id}
             />
-            <TextInput
-                labelText={"Start Date"}
-                type={"date"}
-                stateKey={"startDate"}
-                placeholder={"yyyy-mm-dd"}
-                updateFunction={updateEducationInfo}
-                id={id}
-            />
-            <TextInput
-                labelText={"End Date"}
-                type={"date"}
-                stateKey={"endDate"}
-                placeholder={"yyyy-mm-dd"}
-                updateFunction={updateEducationInfo}
-                id={id}
-            />
+            <div className="flex flex-row gap-4">
+                <TextInput
+                    labelText={"Start Date"}
+                    type={"date"}
+                    stateKey={"startDate"}
+                    placeholder={"yyyy-mm-dd"}
+                    updateFunction={updateEducationInfo}
+                    id={id}
+                />
+                <TextInput
+                    labelText={"End Date"}
+                    type={"date"}
+                    stateKey={"endDate"}
+                    placeholder={"yyyy-mm-dd"}
+                    updateFunction={updateEducationInfo}
+                    id={id}
+                />
+            </div>
             <EditButtons addForm={addEducationForm} removeForm={removeEducationForm} />
         </form>
 
