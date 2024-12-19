@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
 
     return (
-        <form >
+        <form className="mt-4">
             <TextInput
                 labelText={"Job"}
                 type={"text"}
@@ -35,7 +35,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                     labelText={"Start Date"}
                     type={"date"}
                     stateKey={"startDate"}
-                    placeholder={"Enter Start Date"}
+                    placeholder={"month, year"}
                     updateFunction={updateExperienceInfo}
                     id={id}
                 />
@@ -43,7 +43,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
                     labelText={"End Date"}
                     type={"date"}
                     stateKey={"endDate"}
-                    placeholder={"Enter End Date"}
+                    placeholder={"month, year"}
                     updateFunction={updateExperienceInfo}
                     id={id}
                 />
@@ -67,7 +67,7 @@ function ExperienceInfoForm({ id, updateExperienceInfo, addExperienceForm, remov
 function ExperienceInfoList({ experienceInfo, updateExperienceInfo, addExperienceForm, removeExperienceForm }) {
 
     return (
-        <div className="p-6 bg-white rounded-lg">
+        <div className="p-6 bg-white rounded-lg shadow-md">
             <h1>
                 <i className="fa fa-suitcase"></i> Experience
             </h1>

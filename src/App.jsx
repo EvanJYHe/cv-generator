@@ -109,7 +109,7 @@ function App() {
           removeExperienceForm={removeExperienceForm}
         />
       </div>
-      <div className="flex-1 my-6 mr-6 bg-white rounded-lg">
+      <div className="text-2xl flex-1 my-6 mr-6 bg-white rounded-lg shadow-md font-serif p-14">
         <PersonalSection
           personalInfo={personalInfo}
         />
@@ -119,7 +119,6 @@ function App() {
         <ExperienceSection
           experienceInfo={experienceInfo}
         />
-
       </div>
     </div>
   )

@@ -27,7 +27,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
                     labelText={"Start Date"}
                     type={"date"}
                     stateKey={"startDate"}
-                    placeholder={"yyyy-mm-dd"}
+                    placeholder={"month, year"}
                     updateFunction={updateEducationInfo}
                     id={id}
                 />
@@ -35,7 +35,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
                     labelText={"End Date"}
                     type={"date"}
                     stateKey={"endDate"}
-                    placeholder={"yyyy-mm-dd"}
+                    placeholder={"month, year"}
                     updateFunction={updateEducationInfo}
                     id={id}
                 />
@@ -49,7 +49,7 @@ function EducationInfoForm({ id, updateEducationInfo, addEducationForm, removeEd
 function EducationInfoList({ educationInfo, updateEducationInfo, addEducationForm, removeEducationForm }) {
 
     return (
-        <div className="p-6 bg-white rounded-lg">
+        <div className="p-6 bg-white rounded-lg shadow-md">
             <h1>
                 <i className="fa fa-graduation-cap"></i> Education
             </h1>

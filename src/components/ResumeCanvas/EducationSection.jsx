@@ -1,15 +1,18 @@
+import Line from './Line';
+import SectionHeader from './SectionHeader';
+
 function EducationDetails({educationForm}) {
-    return(
-        <div>
-            <div className="education-details">
-                <div>
+    return( 
+        <div className="flex justify-between mt-4">
+            <div>
+                <div className="font-bold">
                     {educationForm.schoolName}
                 </div>
                 <div>
                     {educationForm.degree}
                 </div>
             </div>
-            <div className="duration-and-location">
+            <div className="text-right">
                 <div>
                     {educationForm.startDate} - {educationForm.endDate}
                 </div>
@@ -25,10 +28,8 @@ function EducationDetails({educationForm}) {
 function EducationSection({educationInfo}) {
     return(
         <div>
-            <h1>
-                Education
-            </h1>
-            <hr/>
+            <SectionHeader text={"Education"}/>
+            <Line/>
             {educationInfo.map((form) => (
             <EducationDetails
                 key={form.id}

@@ -3,7 +3,7 @@ import TextInput from "./TextInput";
 
 function PersonalInfoForm({ updatePersonalInfo }) {
     return (
-        <div className="p-6 bg-white rounded-lg">
+        <div className="p-6 bg-white rounded-lg shadow-md">
             <h1>
                 <i className="fa fa-user"></i> Personal
             </h1>

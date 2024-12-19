@@ -1,18 +1,25 @@
+import SectionHeader from "./SectionHeader";
+import Line from "./Line";
+
+function GetDescription() {
+
+}
+
 function ExperienceDetails({experienceForm}) {
     return(
-        <div>
-            <div className="experience-details">
-                <div>
+        <div className="flex flex-row justify-between mt-4">
+            <div className="">
+                <div className="font-bold">
                     {experienceForm.job}
                 </div>
-                <div>
+                <div className="italic">
                     {experienceForm.company}
                 </div>
-                <div>
+                <li className="ml-1">
                     {experienceForm.description}
-                </div>
+                </li>
             </div>
-            <div className="duration-and-location">
+            <div className="text-right flex-none">
                 <div>
                     {experienceForm.startDate} - {experienceForm.endDate}
                 </div>
@@ -28,10 +35,8 @@ function ExperienceDetails({experienceForm}) {
 function ExperienceSection({experienceInfo}) {
     return(
         <div>
-            <h1>
-                Experience
-            </h1>
-            <hr/>
+            <SectionHeader text={"Experience"}/>
+            <Line/>
             {experienceInfo.map((form) => (
             <ExperienceDetails
                 key={form.id}
